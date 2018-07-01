@@ -1233,6 +1233,7 @@ public void updateExternalEntity(  WorkInfo workInfo ) {
 				  nvp = stkFailedSent.pop();
 				  if (!SendPost2WebSsite(nvp)) {
 					  saveCurrentFailedToDisk( (Stack<NameValuePair[]> )stkFailedSent.clone());
+					  stkFailedSent.push(nvp);
 					  break; 	    		
 				  }
 	    	  }
