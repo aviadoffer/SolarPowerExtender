@@ -8,7 +8,7 @@ The original SolarPower I used is 1.14  from http://www.mppsolar.com/manual/Sola
 Current status:
 ---------------
 
- 1) The changes only work with the LV version of MPPSolar (U.S. 110v inverters). The relevat class is P18ComUSBProcessor. 
+ 1) The changes only work with the LV version of MPPSolar (U.S. 110v inverters). The relevant class is P18ComUSBProcessor. 
    This can be easily modified to any inverter type however since I don't have access to any of those I can't make the changes.
    
  2) The changes only send specific fields to external source, the future plan is to read a config file with ther required fields.
@@ -26,4 +26,17 @@ You will need to
 
 When I will have some more time I will make it more generic and configurable without actually compiling files.
 
-   
+What can I do if I don't have this exact inverter but I use SolarPower:
+-----------------------------------------------------------------------
+
+You can modify cn.com.voltronic.solar.processor.WorkMonitor.java 
+ public void run()
+  {
+    System.out.println("Process in: "  + this.processer.getClass().getName() + " hash: " + this.processer.getClass().hashCode() + " Serial:" + this.processer.getProtocol().getSerialNo());
+    .
+    .
+    .
+        
+ This will print to the console which class is used to your own inverter. You can than make similar changes to this class based on the changes to P18ComUSBProcessor.
+ 
+
