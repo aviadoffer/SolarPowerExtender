@@ -30,6 +30,7 @@ What can I do if I don't have this exact inverter but I use SolarPower:
 -----------------------------------------------------------------------
 
 You can modify cn.com.voltronic.solar.processor.WorkMonitor.java 
+
  public void run()
   {
     System.out.println("Process in: "  + this.processer.getClass().getName() + " hash: " + this.processer.getClass().hashCode() + " Serial:" + this.processer.getProtocol().getSerialNo());
